@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        /* Fullscreen background styling */
+        body {
+          background-color: rgb(0, 0, 0);
+          background-image: url('General Mathematics/12.png');
+          background-size: 85%;
+          background-position: top;
+          background-repeat: no-repeat;
+        }
+
+        .quiz-container {
+            background-color: transparent;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            position: relative; /* Relative positioning for absolute positioning inside */
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .q1-input {
+            position: absolute;
+            top: 200px; /* Adjust top position for Question 1 */
+            left: 20px;
+            width: 100%;
+        }
+
+        .q2-input {
+            position: absolute;
+            top: 100px; /* Adjust top position for Question 2 */
+            left: 20px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            position: absolute; /* Position this anywhere within the quiz container */
+            bottom: -30px; /* Adjust position based on needs */
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .input-container {
+            position: absolute;
+            top: 50px; /* Adjust vertical position for the input boxes */
+            left: 20px;
+        }
+
+        .button-container {
+            position: absolute;
+            top: 250px; /* Adjust position for the button */
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Simple Quiz</h2>
+        <form id="quizForm">
+            <!-- Input Containers -->
+            <div class="input-container">
+                <div class="question">
+                    <label for="q1">What is 2 + 2?</label><br>
+                    <input type="text" id="q1" placeholder="Enter your answer">
+                </div>
+
+                <div class="question">
+                    <label for="q2">What is the capital of France?</label><br>
+                    <input type="text" id="q2" placeholder="Enter your answer">
+                </div>
+            </div>
+
+            <!-- Button Container -->
+            <div class="button-container">
+                <button type="button" onclick="checkAnswers()">Submit</button>
+            </div>
+
+            <!-- Result Container -->
+            <div class="result" id="result"></div>
+        </form>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const form = document.getElementById('quizForm');
+            const q1Answer = document.getElementById('q1').value.trim().toLowerCase();
+            const q2Answer = document.getElementById('q2').value.trim().toLowerCase();
+
+            const correctAnswers = {
+                q1: '4', // Correct answer for question 1
+                q2: 'paris' // Correct answer for question 2
+            };
+
+            let score = 0;
+
+            // Check Question 1
+            if (q1Answer === correctAnswers.q1) {
+                score++;
+            }
+
+            // Check Question 2
+            if (q2Answer === correctAnswers.q2) {
+                score++;
+            }
+
+            // Show the result
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `You scored ${score} out of 2`;
+        }
+    </script>
+</body>
+</html>

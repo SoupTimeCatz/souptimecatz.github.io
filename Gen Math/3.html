@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        /* Fullscreen background styling */
+        body {
+          background-color: rgb(0, 0, 0);
+          background-image: url('General Mathematics/3.png');
+          background-size: 85%;
+          background-position: top;
+          background-repeat: no-repeat;
+        }
+
+        .clickable-area {
+      position: absolute; /* Position relative to the body */
+      cursor: pointer; /* Indicate interactivity */
+    }
+
+    /* Clickable Area 1 */
+    .area1 {
+      top: 53%; /* Adjust the position */
+      left: 19%; /* Adjust the position */
+      width: 22%; /* Adjust the width */
+      height: 15%; /* Adjust the height */
+    }
+
+    /* Clickable Area 2 */
+    .area2 {
+      top: 53%; /* Adjust the position */
+      left: 53.5%; /* Adjust the position */
+      width: 22%; /* Adjust the width */
+      height: 15%; /* Adjust the height */
+    }
+
+    /* Optional styling for debugging */
+    .clickable-area:hover {
+      outline: 2px solid red; /* Visualize the area during testing */
+    }
+      </style>
+<body>
+
+  <div class="clickable-area area1" onclick="window.location.href='4.html'"></div>
+
+  <!-- Clickable Area 2 -->
+  <div class="clickable-area area2" onclick="window.location.href='4.html'"></div>
+</body>
+</html>

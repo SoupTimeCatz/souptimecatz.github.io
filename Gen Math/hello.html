@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        /* Fullscreen background styling */
+        body {
+          background-image: url('General Mathematics/1.png')
+        }
+      </style>
+<body>
+<h1>DO NOT Press "F" to toggle fullscreen</h1>
+  
+<a href="hi.html">go to hi</a>
+
+<script>
+    // Key event listener
+    function toggleFullscreen(event) {
+      let key = event.key;
+      if (key === "f" || key === "F") { 
+        if (!document.fullscreenElement) {
+          // If not in fullscreen, enter fullscreen
+          openFullscreen();
+        } else {
+          // If in fullscreen, exit fullscreen
+          closeFullscreen();
+        }
+      }
+    }
+
+    // Attach keydown event listener to the document
+    document.addEventListener("keydown", toggleFullscreen);
+
+    // Function to enter fullscreen
+    var elem = document.documentElement; // Target the entire document
+    function openFullscreen() {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { // Safari
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { // IE11
+        elem.msRequestFullscreen();
+      }
+    }
+
+    // Function to exit fullscreen
+    function closeFullscreen() {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) { // Safari
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { // IE11
+        document.msExitFullscreen();
+      }
+    }
+  </script>
+</body>
+</html>

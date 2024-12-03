@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        /* Fullscreen background styling */
+        body {
+          background-color: rgb(0, 0, 0);
+          background-image: url('General Mathematics/First Page.png');
+          background-size: 85%;
+          background-position: top;
+          background-repeat: no-repeat;
+        }
+
+        .clickable-area {
+      position: absolute; /* Position relative to the viewport */
+      top: 40%; /* Adjust based on where the region is on your background */
+      left: 32%; /* Adjust the positioning */
+      width: 36%; /* Adjust the width of the clickable area */
+      height: 20.5%; /* Adjust the height */
+      cursor: pointer; /* Show a pointer to indicate interactivity */
+    }
+
+    /* Optional styling for debugging */
+    .clickable-area:hover {
+      outline: 2px solid red; /* Visualize the area during testing */
+    }
+      </style>
+<body>
+  
+<div class="clickable-area" onclick="window.location.href='1.html'"></div>
+
+</body>
+</html>
